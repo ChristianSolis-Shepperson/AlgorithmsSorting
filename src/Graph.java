@@ -15,16 +15,33 @@ public class Graph {
 			}
 		}	
 	}
-	
+
+    /**
+     * Returns the values in the vertices instance variable.
+     * @return the values in the vertices instance variable.
+     */
 	public ArrayList<String> getVerticies() {
 		return verticies;
 	}
-	
+
+    /**
+     *
+     * @return
+     */
 	public HashMap<String,String> getEdgeList(){
 		return edgeList;
 	}
-	
-	//FIXME
+
+    /**
+     *
+     * @return Returns the graph as a list of vertices, and the edges associated with them. Format:
+     *
+     *           v1: edge1, edge2, ...
+     *
+     *           v2: edge1, edge2 ...
+     *
+     *           etc for each vertex
+     */
 	@Override
 	public String toString() {
 		

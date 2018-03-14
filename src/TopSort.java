@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class TopSort {
 
-	public ArrayList<String> dfsTopSort(Graph g) {
+	public static ArrayList<String> dfsTopSort(Graph g) {
 		long startTime = System.nanoTime();
 		
 		//write code
@@ -19,7 +19,7 @@ public class TopSort {
 
 	}
 
-	public ArrayList<String> sourceTopSort(Graph g) {
+	public static ArrayList<String> sourceTopSort(Graph g) {
 		long startTime = System.nanoTime();
 		
 		//write code
