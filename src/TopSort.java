@@ -7,13 +7,16 @@ public class TopSort {
     public static boolean checkForCycle(Graph g){
         Stack stack = new Stack();
         String value = "";
-        HashMap<String,String> map = g.getEdgeList();
-        for (String key : map.keySet()){
-            stack.push(key);
-            value = map.get(key);
-            for (Object keysOnStack : stack){
-                if(keysOnStack == value){
-                    return true;
+        ArrayList<String> Vertex = g.getVerticies();
+
+        for (String V : Vertex) {
+            ArrayList<String> edges = g.getEdgeList(V);
+            stack.push(V);
+            for (Object keysOnStack : stack) {
+                for (String e: edges) {
+                    if (keysOnStack == e) {
+                        return true;
+                    }
                 }
             }
         }
