@@ -10,15 +10,14 @@ public class Graph {
 	public Graph(String [][] graphIn) {
 		verticies = new ArrayList<>();
 		edgeList = new LinkedHashMap<>();
-        ArrayList<String> value = new ArrayList<>();
 		for(int i = 0; i < graphIn.length; i++) {
+            ArrayList<String> value = new ArrayList<>();
             verticies.add(graphIn[i][0]);
 			for(int j = 1; j < graphIn[i].length; j++ ) {
 			      value.add(graphIn[i][j]);
 			}
 			edgeList.put(verticies.get(i),value);
-			value.clear();
-		}	
+		}
 	}
 
     /**
@@ -34,7 +33,8 @@ public class Graph {
      * @return
      */
 	public ArrayList<String> getEdgeList(String key){
-		return edgeList.get(key);
+	    ArrayList<String> ender = edgeList.get(key);
+		return ender;
 	}
 
     /**
