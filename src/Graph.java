@@ -1,18 +1,26 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class Graph {
 	
 	ArrayList<String> verticies;
-	HashMap<String, String> edgeList;
+	LinkedHashMap<String, String> edgeList;
 	
 	public Graph(String [][] graphIn) {
-		
+		verticies = new ArrayList<>();
+		edgeList = new LinkedHashMap<>();
+        String value = "";
 		for(int i = 0; i < graphIn.length; i++) {
-			for(int j = 0; j < graphIn.length; j++ ) {
-			verticies.add(graphIn[i][0]);
-			edgeList.put(graphIn[i][0], graphIn[i][j]);
+            verticies.add(graphIn[i][0]);
+			for(int j = 1; j < graphIn[i].length; j++ ) {
+			      value += graphIn[i][j];
+			      if(j!=graphIn[i].length-1){
+			          value+=",";
+                  }
 			}
+			edgeList.put(verticies.get(i),value);
+			value = "";
 		}	
 	}
 
