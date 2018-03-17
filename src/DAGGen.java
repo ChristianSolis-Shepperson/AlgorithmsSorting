@@ -11,6 +11,9 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Class creates a DAG or a simple Digraph credits above.
+ */
 public class DAGGen {
     private static final class Edge implements Comparable<Edge> {
         private final int v;
