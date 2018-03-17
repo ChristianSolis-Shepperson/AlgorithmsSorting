@@ -130,7 +130,23 @@ public class TopSortTest1 {
         ArrayList<String> expected = new ArrayList<String> (Arrays.asList( "c1", "c2","c3", "c4", "c5", "c6", "c7"));
         assertEquals("source should be c1, c2, c3, c4, c5, c6, c7", expected, actual);
     }
+    @Test
+    public void testSource6() {
+        String[] [] graphin = {
+                {"c2","c7"},
+                {"c4", "c5"},
+                {"c5"} ,
+                {"c6", "c7"},
+                {"c7", "c4", "c5"}};
 
+        Graph g = new Graph(graphin );
+        TopSort t = new TopSort( );
+        ArrayList<String> actual = t.sourceTopSort(g);
+        ArrayList<String> expected = new ArrayList<String> (Arrays.asList( "c2","c6", "c7", "c4", "c5" ));
+        assertEquals("source should be  c2,  c6, c7, c4, c5,", expected, actual);
+
+
+    }
     /**
      * This test will run through the DAGGen class,
      * debug through to confirm accuracy.
