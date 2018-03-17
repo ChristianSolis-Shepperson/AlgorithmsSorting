@@ -131,4 +131,20 @@ public class TopSortTest1 {
         assertEquals("source should be c1, c2, c3, c4, c5, c6, c7", expected, actual);
     }
 
+    /**
+     * This test will run through the DAGGen class,
+     * debug through to confirm accuracy.
+     * Since the DAG that is generated in random every time
+     * it is tough to write a true test case for it.
+     */
+    @Test
+    public void testCreateDAG() {
+        DAGGen Object = new DAGGen();
+        TopSort t = new TopSort();
+        Graph g = Object.createDAG(5,4);
+        ArrayList<String> actual = t.dfsTopSort(g);
+        assertNotNull(actual);
+
+    }
+
 }

@@ -1,6 +1,11 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.Scanner;
 
 public class Graph {
 	
@@ -20,7 +25,12 @@ public class Graph {
 		}
 	}
 
-    /**
+	public Graph() {
+		verticies = new ArrayList<>();
+		edgeList = new LinkedHashMap<>();
+	}
+
+	/**
      * Returns the values in the vertices instance variable.
      * @return the values in the vertices instance variable.
      */
@@ -51,8 +61,17 @@ public class Graph {
 	public String toString() {
 		
 		//example
-		System.out.println("v1: edge1, edge 2");
+		//System.out.println("v1: edge1, edge 2");
 		return "";
 	}
+    public static String getVertexFromString(String str) {
+        return str.substring(0, 1);
+    }
+    public static String getEdgesFromString(String str) {
+        return str.substring(3, str.length());
+    }
+
+	public static void main (String [] args){
+    }
 
 }
